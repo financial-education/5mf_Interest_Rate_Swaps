@@ -143,15 +143,20 @@
 		fr4 = fr4.toFixed(2);
 
 		//calculate payments-----
-		var pmt1 = +x * (fr1 - +y);
-		pmt1 = pmt1.toFixed(2);
-		var pmt2 = +x * (fr2 - +y);
-		pmt2 = pmt2.toFixed(2);
-		var pmt3 = +x * (fr3 - +y);
-		pmt3 = pmt3.toFixed(2);
-		var pmt4 = +x * (fr4 - +y);
-		pmt4 = pmt4.toFixed(2);
+		var pmt1 = +x * (fr1 - +y)/100;
+		pmt1 = pmt1.toFixed(0);
+		var pmt2 = +x * (fr2 - +y)/100;
+		pmt2 = pmt2.toFixed(0);
+		var pmt3 = +x * (fr3 - +y)/100;
+		pmt3 = pmt3.toFixed(0);
+		var pmt4 = +x * (fr4 - +y)/100;
+		pmt4 = pmt4.toFixed(0);
 
+		//total--------
+		var total1 = Number(5000) + Number(pmt1);
+		var total2 = Number(5000) + Number(pmt2);
+		var total3 = Number(5000) + Number(pmt3);
+		var total4 = Number(5000) + Number(pmt4);
 
 		
 		document.getElementById("rando1").innerHTML = fr1+"%";
@@ -163,6 +168,12 @@
 	    	document.getElementById("pmt2").innerHTML = "$"+pmt2;
 	    	document.getElementById("pmt3").innerHTML = "$"+pmt3;
 	    	document.getElementById("pmt4").innerHTML = "$"+pmt4;
+
+		document.getElementById("total1").innerHTML = "$"+total1;
+	    	document.getElementById("total2").innerHTML = "$"+total2;
+	    	document.getElementById("total3").innerHTML = "$"+total3;
+	    	document.getElementById("total4").innerHTML = "$"+total4;
+
 }
 	  </script>
 
@@ -171,26 +182,36 @@
 	      <td>Year</td>
 	      <td>Floating Rate</td>
 	      <td>Swap Payment</td>
+	      <td>From 5% Bond</td>
+	      <td>Total</td>
 	    </tr>
 	    <tr>
 	      <td>1</td>
 	      <td id="rando1"></td>
 	      <td id="pmt1"></td>
+	      <td>$5000</td>
+	      <td id="total1"></td>
 	    </tr>
 	    <tr>
 	      <td>2</td>
 	      <td id="rando2"></td>
 	      <td id="pmt2"></td>
+	      <td>$5000</td>
+	      <td id="total2"></td>
 	    </tr>
 	    <tr>
 	      <td>3</td>
 	      <td id="rando3"></td>
 	      <td id="pmt3"></td>
+	      <td>$5000</td>
+	      <td id="total3"></td>
 	    </tr>
 	    <tr>
 	      <td>4</td>
 	      <td id="rando4"></td>
 	      <td id="pmt4"></td>
+	      <td>$5000</td>
+	      <td id="total4"></td>
 	    </tr>
 	  </table>
 	  
